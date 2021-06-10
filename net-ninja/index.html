@@ -7,12 +7,25 @@
   </head>
   <body>
     <div id="vue-app">
-      <button v-on:click="error = !error">Toggle Error</button>
-      <button v-on:click="success = !success">Toggle Success</button>
-      <p v-if="error">????error???</p>
-      <p v-else-if="success">!!!!success!!!</p>
-      <!-- <p v-show="error">????error???</p>
-      <p v-show="success">!!!!success!!!</p> -->
+      <ul>
+        <li v-for="ch in characters">
+          {{ch}}
+        </li>
+      </ul>
+      <ul>
+        <li v-for="(nin, idx) in ninjas">
+          {{idx}} : {{nin.name}} is {{nin.age}} years old 
+        </li>
+      </ul>
+      <template v-for="(nin, idx) in ninjas">
+        <h3>{{idx}}. {{nin.name}}</h3>
+        <p>{{nin.age}}</p>
+      </template>
+      <template v-for="nin in ninjas">
+        <div v-for="(val, key) in nin">
+          <p>{{key}} - {{val}}</p>
+        </div>
+      </template>>
     </div>
     <script src="app.js"></script>
   </body>
