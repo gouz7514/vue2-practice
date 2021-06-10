@@ -6,14 +6,11 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   </head>
   <body>
-    <div id="vue-app-one">
-      <h2>Vue app one</h2>
-      <greeting></greeting>
-    </div>
-
-    <div id="vue-app-two">
-      <h2>Vue app two</h2>
-      <greeting></greeting>
+    <div id="vue-app">
+      <input type="text" ref="input"/>
+      <button v-on:click="readRefs">Submit</button>
+      <p>{{output}}</p>
+      <div ref="test">hello</div>
     </div>
     <script src="app.js"></script>
   </body>

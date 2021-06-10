@@ -1,21 +1,12 @@
-Vue.component("greeting", {
-  template: '<p>I am {{name}} <button @click="changeName">Change Name</button></p>',
-  data: function() {
-    return {
-      name: "Kim"
-    }
-  },
+new Vue({
+  el: '#vue-app',
+  data: {
+    output: "Your fav food"
+  } ,
   methods: {
-    changeName: function() {
-      this.name == "kim" ? this.name = "park" : this.name = "kim"
+    readRefs: function() {
+      console.log(this.$refs.test.innerText) // $refs : scope 내의 모든 refs 불러온다
+      this.output = this.$refs.input.value
     }
-  }
-})
-
-new Vue({
-  el: '#vue-app-one'
-})
-
-new Vue({
-  el: '#vue-app-two'
+  } 
 })
