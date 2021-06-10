@@ -1,17 +1,34 @@
-new Vue({
-  el: '#vue-app', // 어떤 element에 연결될지
+let one = new Vue({
+  el: '#vue-app-one',
   data: {
-    characters: ['Mario', 'Luigi', 'Yoshi', 'Bowser'],
-    ninjas: [
-      {name: 'Ryu', age: 25},
-      {name: 'Yoshi', age: 35},
-      {name: 'Ken', age: 55}
-    ]
+    title: 'Vue-app One'
   },
   methods: {
     
   },
   computed: {
-
+    greet: function() {
+      console.log('app1')
+      return 'Hello from app one'
+    }
   }
 })
+
+let two = new Vue({
+  el: '#vue-app-two',
+  data: {
+    title: 'Vue-app Two'
+  },
+  methods: {
+    changeTitle: function() {
+      one.title = "Title changed"
+    }
+  },
+  computed: {
+    greet: function() {
+      return 'Hello from app two'
+    }
+  }
+})
+
+two.title = "Changed from outside"

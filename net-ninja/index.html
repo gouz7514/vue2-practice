@@ -6,26 +6,15 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   </head>
   <body>
-    <div id="vue-app">
-      <ul>
-        <li v-for="ch in characters">
-          {{ch}}
-        </li>
-      </ul>
-      <ul>
-        <li v-for="(nin, idx) in ninjas">
-          {{idx}} : {{nin.name}} is {{nin.age}} years old 
-        </li>
-      </ul>
-      <template v-for="(nin, idx) in ninjas">
-        <h3>{{idx}}. {{nin.name}}</h3>
-        <p>{{nin.age}}</p>
-      </template>
-      <template v-for="nin in ninjas">
-        <div v-for="(val, key) in nin">
-          <p>{{key}} - {{val}}</p>
-        </div>
-      </template>>
+    <div id="vue-app-one">
+      <h2>{{title}}</h2>
+      <p>{{greet}}</p>
+    </div>
+
+    <div id="vue-app-two">
+      <h2>{{title}}</h2>
+      <p>{{greet}}</p>
+      <button @click="changeTitle">Change App One Title</button>
     </div>
     <script src="app.js"></script>
   </body>
