@@ -1,34 +1,22 @@
-let one = new Vue({
-  el: '#vue-app-one',
+new Vue({
+  el: '#vue-app',
   data: {
-    title: 'Vue-app One'
+    health: 100,
+    ended: false
   },
   methods: {
+    punchBtn: function() {
+      this.health -= 20
+      if (this.health <= 0) {
+        this.ended = true
+      }
+    },
+    resetBtn: function() {
+      this.health = 100
+      this.ended = false
+    }
+  },
+  computed: {
     
-  },
-  computed: {
-    greet: function() {
-      console.log('app1')
-      return 'Hello from app one'
-    }
   }
 })
-
-let two = new Vue({
-  el: '#vue-app-two',
-  data: {
-    title: 'Vue-app Two'
-  },
-  methods: {
-    changeTitle: function() {
-      one.title = "Title changed"
-    }
-  },
-  computed: {
-    greet: function() {
-      return 'Hello from app two'
-    }
-  }
-})
-
-two.title = "Changed from outside"

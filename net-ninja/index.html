@@ -6,15 +6,17 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   </head>
   <body>
-    <div id="vue-app-one">
-      <h2>{{title}}</h2>
-      <p>{{greet}}</p>
-    </div>
+    <div id="vue-app">
+      <div id="punch-bag" v-bind:class="{boom: ended}"></div>
 
-    <div id="vue-app-two">
-      <h2>{{title}}</h2>
-      <p>{{greet}}</p>
-      <button @click="changeTitle">Change App One Title</button>
+      <div id="bag-health">
+        <div v-bind:style="{width: health + '%'}"></div>
+      </div>
+
+      <div class="buttons">
+        <button v-on:click="punchBtn" v-if="!ended">Punch</button>
+        <button v-on:click="resetBtn">Restart</button>
+      </div>
     </div>
     <script src="app.js"></script>
   </body>
