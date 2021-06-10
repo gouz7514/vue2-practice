@@ -1,17 +1,40 @@
 new Vue({
   el: '#vue-app', // 어떤 element에 연결될지
   data: {
-    name: 'Kim',
     age: 26,
-    website: 'https://www.naver.com',
-    websiteTag: '<a href="https://www.naver.com">Naver Tag</a>',
-    message: 'type your message'
+    x: 0,
+    y: 0
   },
   methods: {
     // this는 Vue 인스턴스 자체
     // data 안의 모든 속성들이 인스턴스에 종속된다.
-    greet: function() {
-      return 'Hello Vue ' + this.name
+    add: function(x) {
+      this.age += x
+    },
+    subtract: function(x) {
+      this.age -= x
+    },
+    updateXY: function(e) {
+      this.x = e.offsetX
+      this.y = e.offsetY
+    },
+    click: function() {
+      alert('you clicked me')
+    }
+  }
+})
+
+new Vue({
+  el: '#vue-key',
+  data: {
+
+  },
+  methods: {
+    logName: function() {
+      console.log('you entered name')
+    },
+    logAge: function() {
+      console.log('you entered age')
     }
   }
 })
