@@ -7,17 +7,12 @@
   </head>
   <body>
     <div id="vue-app">
-      <h2>Example 1</h2>
-      <!-- 아래와 같이 선언하면 available 클래스의 존재 여부가 데이터 속성 available에 의해 결정된다 -->
-      <!-- <div v-on:click="available = !available" v-bind:class="{available: available}">
-        <span>Ryu</span>
-      </div> -->
-      <h2>Example 2</h2>
-      <button v-on:click="nearby = !nearby">Toggle nearby</button>
-      <button v-on:click="available = !available">Toggle available</button>
-      <div v-bind:class="compClasses">
-        <span>Ryu</span>
-      </div>
+      <button v-on:click="error = !error">Toggle Error</button>
+      <button v-on:click="success = !success">Toggle Success</button>
+      <p v-if="error">????error???</p>
+      <p v-else-if="success">!!!!success!!!</p>
+      <!-- <p v-show="error">????error???</p>
+      <p v-show="success">!!!!success!!!</p> -->
     </div>
     <script src="app.js"></script>
   </body>
