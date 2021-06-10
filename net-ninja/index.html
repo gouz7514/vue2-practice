@@ -18,10 +18,16 @@
 
     <div id="vue-key">
       <h1>Keyboard Events</h1>
-      <label>Name: </label>
-      <input type="text" v-on:keyup.alt.enter="logName"/>
-      <label>Age: </label>
-      <input type="text" v-on:keyup.enter="logAge"/>
+      <div class="name-container">
+        <label>Name: </label>
+        <input type="text" v-model="name">
+        <span>{{name}}</span>
+      </div>
+      <div class="age-container">
+        <label>Age: </label>
+        <input type="text" v-model="age"/>
+        <span>{{age}}</span>
+      </div>
     </div>
     <script src="app.js"></script>
   </body>

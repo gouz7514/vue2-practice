@@ -27,7 +27,8 @@ new Vue({
 new Vue({
   el: '#vue-key',
   data: {
-
+    name: '',
+    age: ''
   },
   methods: {
     logName: function() {
@@ -35,6 +36,7 @@ new Vue({
     },
     logAge: function() {
       console.log('you entered age')
+
     }
   }
 })
