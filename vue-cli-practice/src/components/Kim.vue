@@ -1,21 +1,17 @@
 <template>
-  <div>
-    <h1>{{title}}</h1>
-    <kim></kim>
-  </div>
+  <ul>
+    <li v-for="(name, idx) in kim" :key="idx">{{name}}</li>
+  </ul>
 </template>
 
 <script>
-import Kim from './components/Kim.vue'
 export default {
-  name: 'App',
   data() {
     return {
-      title: "My App"
+      kim: ["aaaaa", "bbbbb", "ccccc"]
     }
   },
   components: {
-    Kim
     
   }
 }
