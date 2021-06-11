@@ -18,7 +18,7 @@ export default {
   // }
   methods: {
     changeTitle: function() {
-      this.title = "title changed"
+      this.$emit('changeTitle', "event emiitted to change title")
     }
   }
 }
