@@ -6,7 +6,8 @@
 </template>
 
 <script>
-import Kim from './components/Kim.vue'
+// import Kim from './components/Kim.vue'
+
 export default {
   name: 'App',
   data() {
@@ -15,8 +16,7 @@ export default {
     }
   },
   components: {
-    Kim
-    
+    // Kim    
   }
 }
 </script>
