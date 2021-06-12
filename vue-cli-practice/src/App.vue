@@ -1,32 +1,25 @@
 <template>
   <div>
-    <form-helper>
-      <template v-slot:form-header>
-        <h3>This is tilte of form</h3>
-        <p>information about form</p>
-      </template>
-      <template v-slot:form-fields>
-        <input type="text" placeholder="name" required />
-        <input type="password" placeholder="password" required />
-      </template>
-      <template v-slot:form-controls>
-        <button @click="handleSubmit">Submit</button>
-      </template>
-    </form-helper>
-    
+    <keep-alive>
+      <component v-bind:is="component"></component>
+    </keep-alive>
+    <button @click="component = 'form-one'">Show form One</button>
+    <button @click="component = 'form-two'">Show form Two</button>
   </div>
 </template>
 
 <script>
-import formHelper from './components/FormHelper.vue'
+import formOne from './components/formOne.vue'
+import formTwo from './components/formTwo.vue'
 
 export default {
   components: {
-    'form-helper': formHelper
+    'form-one': formOne,
+    'form-two': formTwo
   },
   data() {
     return {
-      title: 'I am a dynamic slot'
+      component: 'form-two'
     }
   },
   methods: {
