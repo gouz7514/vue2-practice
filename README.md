@@ -11,4 +11,10 @@ npm i -g vue-cli
 npm install
 ```
 
+### run server
+```
+npm run serve
+```
+and go to [http://localhost:8080](http://localhost:8080)
+
 **make sure you are in right directory!**
