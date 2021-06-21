@@ -24,6 +24,15 @@ Vue.directive('theme', {
   }
 })
 
+// Filters
+Vue.filter('to-uppercase', function(value) { // value는 여기서는 blog.title
+  return value.toUpperCase()
+})
+
+Vue.filter('snippet', function(value) {
+  return value.slice(0, 100) + '...'
+})
+
 // root vue instance
 new Vue({
   el: '#app',
