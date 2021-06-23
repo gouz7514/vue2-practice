@@ -4,11 +4,11 @@ import App from './App.vue'
 export const bus = new Vue(); // event bus
 
 // custom directives
-Vue.directive('rainbow', {
-  bind(el) {
-    el.style.color = "#" + Math.random().toString().slice(2,8);
-  }
-})
+// Vue.directive('rainbow', {
+//   bind(el) {
+//     el.style.color = "#" + Math.random().toString().slice(2,8);
+//   }
+// })
 
 Vue.directive('theme', {
   bind(el, binding) {
@@ -25,9 +25,9 @@ Vue.directive('theme', {
 })
 
 // Filters
-Vue.filter('to-uppercase', function(value) { // value는 여기서는 blog.title
-  return value.toUpperCase()
-})
+// Vue.filter('to-uppercase', function(value) { // value는 여기서는 blog.title
+//   return value.toUpperCase()
+// })
 
 Vue.filter('snippet', function(value) {
   return value.slice(0, 100) + '...'
