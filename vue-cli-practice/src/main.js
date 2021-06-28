@@ -1,14 +1,16 @@
 import Vue from 'vue'
 import App from './App.vue'
+import VueRouter from 'vue-router'
+import Routes from './routes'
+
+Vue.use(VueRouter)
+
+const router = new VueRouter({
+  routes: Routes
+})
 
 export const bus = new Vue(); // event bus
 
-// custom directives
-// Vue.directive('rainbow', {
-//   bind(el) {
-//     el.style.color = "#" + Math.random().toString().slice(2,8);
-//   }
-// })
 
 Vue.directive('theme', {
   bind(el, binding) {
@@ -24,11 +26,6 @@ Vue.directive('theme', {
   }
 })
 
-// Filters
-// Vue.filter('to-uppercase', function(value) { // value는 여기서는 blog.title
-//   return value.toUpperCase()
-// })
-
 Vue.filter('snippet', function(value) {
   return value.slice(0, 100) + '...'
 })
@@ -36,5 +33,6 @@ Vue.filter('snippet', function(value) {
 // root vue instance
 new Vue({
   el: '#app',
-  render: h => h(App)
+  render: h => h(App),
+  router: router
 })

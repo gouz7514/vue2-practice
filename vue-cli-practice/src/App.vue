@@ -1,21 +1,19 @@
 <template>
   <div>
-    <!-- <add-blogs></add-blogs> -->
-    <show-blogs></show-blogs>
-    <list-blogs></list-blogs>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
 // import AddBlogs from './components/AddBlogs.vue'
-import ShowBlogs from './components/ShowBlogs.vue'
-import listBlogs from './components/listBlogs.vue'
+// import ShowBlogs from './components/ShowBlogs.vue'
+// import listBlogs from './components/listBlogs.vue'
 
 export default {
   components: {
     // 'add-blogs' : AddBlogs,
-    'show-blogs': ShowBlogs,
-    'list-blogs': listBlogs
+    // 'show-blogs': ShowBlogs,
+    // 'list-blogs': listBlogs
   },
   data() {
     return {
